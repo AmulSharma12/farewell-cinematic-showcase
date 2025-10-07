@@ -5,17 +5,19 @@ interface Particle {
   left: number;
   delay: number;
   duration: number;
+  size: number;
 }
 
 export const Particles = () => {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const newParticles = Array.from({ length: 30 }, (_, i) => ({
+    const newParticles = Array.from({ length: 50 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 8,
-      duration: 8 + Math.random() * 4,
+      duration: 6 + Math.random() * 6,
+      size: 1 + Math.random() * 3,
     }));
     setParticles(newParticles);
   }, []);
@@ -25,11 +27,13 @@ export const Particles = () => {
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute w-1 h-1 bg-primary rounded-full opacity-50"
+          className="absolute rounded-full bg-gradient-to-r from-primary via-secondary to-accent opacity-60 animate-twinkle"
           style={{
             left: `${particle.left}%`,
             bottom: "-10px",
-            animation: `particle ${particle.duration}s linear infinite`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            animation: `particle ${particle.duration}s linear infinite, twinkle ${3 + Math.random() * 2}s ease-in-out infinite`,
             animationDelay: `${particle.delay}s`,
           }}
         />

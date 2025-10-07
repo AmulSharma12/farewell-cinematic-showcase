@@ -94,6 +94,14 @@ export default {
           "90%": { opacity: "1" },
           "100%": { transform: "translateY(-100vh) translateX(50px)", opacity: "0" },
         },
+        "twinkle": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.3", transform: "scale(0.8)" },
+        },
+        "drift": {
+          "0%, 100%": { transform: "translateX(0) translateY(0)" },
+          "50%": { transform: "translateX(30px) translateY(-30px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -103,6 +111,8 @@ export default {
         "fade-in": "fade-in 1s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
         "particle": "particle 8s linear infinite",
+        "twinkle": "twinkle 3s ease-in-out infinite",
+        "drift": "drift 10s ease-in-out infinite",
       },
     },
   },
