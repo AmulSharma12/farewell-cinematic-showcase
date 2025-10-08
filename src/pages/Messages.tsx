@@ -153,7 +153,7 @@ const Messages = () => {
             ))}
           </div>
           <p className="text-3xl md:text-4xl font-light text-foreground mb-6 leading-relaxed">
-            You've touched so many hearts
+          You’ve made every moment count.
           </p>
           <p className="text-2xl text-accent font-semibold">
             And these words only scratch the surface of your impact ✨
